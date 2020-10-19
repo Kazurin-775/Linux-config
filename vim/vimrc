@@ -1,0 +1,38 @@
+" Basic configuration
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set backspace=indent,eol,start
+set nobackup
+set number
+set hlsearch
+set incsearch
+set mouse=a
+set cursorline
+
+" gVim configuration
+if has("gui_running")
+    set guifont="Sarasa Mono SC 14"
+endif
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
+" Plug 'endel/vim-github-colorscheme'
+" Plug 'dracula/vim', { 'as': 'colors-dracula' }
+call plug#end()
+
+" Syntax and color scheme
+syntax on
+filetype plugin indent on
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+" highlight CursorLine cterm=bold
+
+" Powerline
+if match($TERM, "xterm") > -1 || has("gui_running")
+    python3 from powerline.vim import setup as powerline_setup; powerline_setup(); del powerline_setup
+    set laststatus=2
+endif
