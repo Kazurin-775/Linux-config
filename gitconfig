@@ -1,0 +1,11 @@
+[alias]
+	aa = add -A
+	br = branch
+	cf = config
+	cm = commit
+	co = checkout
+	di = diff
+	ds = diff --staged
+	st = status
+[core]
+	quotepath = false
