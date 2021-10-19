@@ -87,7 +87,7 @@ source "$ZSH/oh-my-zsh.sh"
 # else
 #   export EDITOR='mvim'
 # fi
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 
 proxy() {
     local WSL_HOST_IP="$(ip route get 1.1.1.1 | head -n1 | cut -f3 -d' ')"
