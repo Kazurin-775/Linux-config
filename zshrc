@@ -94,6 +94,11 @@ proxy() {
     redir ':7890' "$WSL_HOST_IP:7890"
 }
 
+# proxify the specified command
+prx() {
+    env http_proxy='http://localhost:7890' https_proxy='http://localhost:7890' "$@"
+}
+
 SSH_ENV="$HOME/.ssh/agent_env"
 
 ssh_agent() {
