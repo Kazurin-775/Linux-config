@@ -2,10 +2,12 @@
 	aa = add -A
 	br = branch
 	cf = config
+	cl = clone
 	cm = commit
 	co = checkout
 	di = diff
 	ds = diff --staged
+	scl = clone --depth=1
 	st = status
 [core]
 	quotepath = false
