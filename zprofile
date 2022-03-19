@@ -1,3 +1,4 @@
+which vim > /dev/null && export EDITOR='vim'
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 
 export RUSTUP_DIST_SERVER='https://mirrors.ustc.edu.cn/rust-static'
