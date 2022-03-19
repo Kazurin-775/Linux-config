@@ -18,9 +18,14 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
-" Plug 'endel/vim-github-colorscheme'
-" Plug 'dracula/vim', { 'as': 'colors-dracula' }
+    " Color schemes
+    Plug 'altercation/vim-colors-solarized'
+    " Plug 'endel/vim-github-colorscheme'
+    " Plug 'dracula/vim', { 'as': 'colors-dracula' }
+
+    " vim-airline
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Syntax and color scheme
@@ -31,8 +36,9 @@ let g:solarized_termcolors=256
 colorscheme solarized
 " highlight CursorLine cterm=bold
 
-" Powerline
+" vim-airline
 if match($TERM, "xterm") > -1 || has("gui_running")
-    python3 from powerline.vim import setup as powerline_setup; powerline_setup(); del powerline_setup
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'dark'
     set laststatus=2
 endif
