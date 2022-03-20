@@ -133,6 +133,12 @@ ssh_agent_if_needed() {
 
 ssh_agent_if_needed
 
+# Source .zprofile in case the desktop environment doesn't do so.
+# https://www.reddit.com/r/zsh/comments/rnhy7n/
+if [[ "$SHLVL" == '1' && ! -o login && ! -o privileged && -o rcs ]]; then
+    source ~/.zprofile
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
