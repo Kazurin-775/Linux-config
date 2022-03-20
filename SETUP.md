@@ -67,6 +67,13 @@ ln -s ~/.vim/autoload ~/.config/nvim/autoload
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
 
+## SSH agent as systemd service
+
+```sh
+cp -a config/systemd ~/.config/
+systemctl --user enable --now ssh-agent
+```
+
 # Import custom configurations
 
 ```sh

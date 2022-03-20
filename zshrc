@@ -109,29 +109,12 @@ prx() {
     env http_proxy='http://localhost:7890' https_proxy='http://localhost:7890' "$@"
 }
 
-SSH_ENV="$HOME/.ssh/agent_env"
-
-ssh_agent() {
-    ssh-agent | sed 's/^echo/#echo/' > "$SSH_ENV"
-    chmod 600 "$SSH_ENV"
-    . "$SSH_ENV"
-}
-
-ssh_agent_if_needed() {
-    local SSH_AGENT_NAME
-    if [ -f "$SSH_ENV" ]; then
-        . "$SSH_ENV"
-        if [ -d "/proc/$SSH_AGENT_PID" ]; then
-            SSH_AGENT_NAME="$(cat /proc/$SSH_AGENT_PID/cmdline)"
-            if [[ "$SSH_AGENT_NAME" =~ '^ssh-agent$' ]]; then
-                return 0
-            fi
-        fi
-    fi
-    ssh_agent
-}
-
-ssh_agent_if_needed
+# Set $SSH_AUTH_SOCK when ssh-agent is launched by `systemd --user`.
+# This is not necessary when the desktop environment already starts ssh-agent
+# for us.
+if [[ -z "${SSH_AUTH_SOCK}" && -f "${XDG_RUNTIME_DIR}/ssh-agent.socket" ]]; then
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+fi
 
 # Source .zprofile in case the desktop environment doesn't do so.
 # https://www.reddit.com/r/zsh/comments/rnhy7n/
