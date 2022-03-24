@@ -33,8 +33,13 @@ git clone --depth=1 'https://github.com/zsh-users/zsh-autosuggestions.git' "${ZS
 ## Rust
 
 ```sh
+# Arch Linux
+sudo pacman -S rustup
+
+# Manually install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Configure alternative Cargo registry
 cat > ~/.cargo/config <<EOF
 [source.crates-io]
 replace-with = 'ustc'
@@ -49,13 +54,17 @@ index = 'git://mirrors.ustc.edu.cn/crates.io-index'
 git-fetch-with-cli = true
 EOF
 
+# Install helper tools
 cargo install cargo-edit
 ```
 
 ## Neovim
 
 ```sh
-# Install latest version (v0.6.1)
+# Arch Linux
+sudo pacman -S neovim
+
+# Manually install latest version (v0.6.1)
 wget 'https://github.com/neovim/neovim/releases/download/v0.6.1/nvim-linux64.tar.gz'
 (cd /opt && sudo tar xf ~/nvim-linux64.tar.gz)
 sudo ln -s '/opt/nvim-linux64/bin/nvim' '/usr/local/bin/nvim'
@@ -67,9 +76,25 @@ ln -s ~/.vim/autoload ~/.config/nvim/autoload
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
 
+## Arch Linux AUR helper (yay)
+
+```sh
+git clone --depth=1 'https://aur.archlinux.org/yay-bin.git'
+cd yay-bin
+makepkg -si
+cd ..
+rm -rf yay-bin
+```
+
 ## Proxy forwarder
 
 ```sh
+# Debian-based OSes
+sudo apt install redir
+# Arch Linux
+yay -S redir
+
+# Install and enable systemd service
 sudo install -m644 systemd/system/proxy-redir.service /etc/systemd/system/
 sudo systemctl enable --now proxy-redir
 ```
