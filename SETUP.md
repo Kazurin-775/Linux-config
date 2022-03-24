@@ -67,6 +67,13 @@ ln -s ~/.vim/autoload ~/.config/nvim/autoload
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
 
+## Proxy forwarder
+
+```sh
+sudo install -m644 systemd/system/proxy-redir.service /etc/systemd/system/
+sudo systemctl enable --now proxy-redir
+```
+
 ## SSH agent as systemd service
 
 ```sh

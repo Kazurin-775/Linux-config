@@ -99,15 +99,10 @@ source "$ZSH/oh-my-zsh.sh"
 #   export EDITOR='mvim'
 # fi
 
-proxy() {
-    local WSL_HOST_IP="$(ip route get 1.1.1.1 | head -n1 | cut -f3 -d' ')"
-    redir ':7890' "$WSL_HOST_IP:7890"
-}
-
-# proxify the specified command
-prx() {
-    env http_proxy='http://localhost:7890' https_proxy='http://localhost:7890' "$@"
-}
+# WSL 2 specific configurations.
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    export http_proxy='http://localhost:7890' https_proxy='http://localhost:7890'
+fi
 
 # Set $SSH_AUTH_SOCK when ssh-agent is launched by `systemd --user`.
 # This is not necessary when the desktop environment already starts ssh-agent
