@@ -9,5 +9,8 @@
 	ds = diff --staged
 	scl = clone --depth=1
 	st = status
+	sm = submodule update --init
+	smu = submodule update --init
+	puff = pull --ff-only
 [core]
 	quotepath = false
