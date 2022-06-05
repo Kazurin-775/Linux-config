@@ -4,7 +4,10 @@
 
 ```sh
 # Basic packages
-sudo apt install build-essential git zsh wget curl tmux vim p7zip-full
+sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2
+
+# CLI utilities
+sudo apt install netcat socat
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
