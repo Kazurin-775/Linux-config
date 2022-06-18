@@ -4,7 +4,7 @@ Description=Proxy forwarder
 [Service]
 Type=simple
 DynamicUser=yes
-ExecStart=/bin/bash -c 'HOST_IP="$(ip route get 1.1.1.1 | head -n1 | cut -f3 -d" ")"; exec redir -n :7890 "$HOST_IP:7890"'
+ExecStart=/bin/bash -c 'HOST_IP="$(ip route get 1.1.1.1 | head -n1 | cut -f3 -d" ")"; exec redir -n localhost:7892 "$HOST_IP:7890"'
 
 [Install]
 WantedBy=multi-user.target

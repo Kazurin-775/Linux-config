@@ -115,7 +115,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 # WSL 2 specific configurations.
 if [ -n "$WSL_DISTRO_NAME" ]; then
-    export http_proxy='http://localhost:7890' https_proxy='http://localhost:7890'
+    export http_proxy='http://localhost:7892' https_proxy='http://localhost:7892'
 fi
 
 # Set $SSH_AUTH_SOCK when ssh-agent is launched by `systemd --user`.

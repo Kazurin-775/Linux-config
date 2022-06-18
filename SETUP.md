@@ -100,6 +100,11 @@ yay -S redir
 # Install and enable systemd service
 sudo install -m644 systemd/system/proxy-redir.service /etc/systemd/system/
 sudo systemctl enable --now proxy-redir
+
+# Note that you'll have to find the proxy application in Windows Firewall's
+# settings, allow TCP connections from public networks, and add IP CIDR
+# `172.16.0.0/12` to its scope.
+# https://github.com/microsoft/WSL/issues/4139
 ```
 
 ## SSH agent as systemd service
