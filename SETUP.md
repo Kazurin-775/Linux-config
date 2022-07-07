@@ -7,11 +7,14 @@
 sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2
 
 # CLI utilities
-sudo apt install netcat socat
+sudo apt install netcat socat strace ltrace
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
 # Note: GNOME uses IBus by default
+
+# CTF tools
+sudo apt install python-pwntools pwndbg radare2
 ```
 
 ## zsh
