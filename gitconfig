@@ -14,3 +14,6 @@
 	puff = pull --ff-only
 [core]
 	quotepath = false
+	# Windows-specific settings
+	autocrlf = input
+	safecrlf = warn
