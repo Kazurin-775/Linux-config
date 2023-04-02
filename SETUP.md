@@ -46,18 +46,13 @@ sudo pacman -S rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Configure alternative Cargo registry
-cat > ~/.cargo/config <<EOF
+mkdir ~/.cargo
+cat > ~/.cargo/config.toml <<EOF
 [source.crates-io]
-replace-with = 'ustc'
+replace-with = 'mirror'
 
-[source.ustc]
-registry = 'git://mirrors.ustc.edu.cn/crates.io-index'
-
-[registries.ustc]
-index = 'git://mirrors.ustc.edu.cn/crates.io-index'
-
-[net]
-git-fetch-with-cli = true
+[source.mirror]
+registry = 'sparse+https://mirrors6.tuna.tsinghua.edu.cn/crates.io-index/'
 EOF
 
 # Install helper tools
