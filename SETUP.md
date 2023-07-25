@@ -7,14 +7,14 @@
 sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2
 
 # CLI utilities
-sudo apt install netcat socat strace ltrace
+sudo apt install netcat-openbsd socat strace ltrace
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
 # Note: GNOME uses IBus by default
 
-# CTF tools
-sudo apt install python-pwntools pwndbg radare2
+# CTF tools (pwndbg is not supported via apt sources)
+sudo apt install python3-pwntools radare2
 ```
 
 ## zsh
@@ -57,6 +57,14 @@ EOF
 
 # Install helper tools
 cargo install cargo-edit
+```
+
+## Install pwndbg on Ubuntu
+
+```sh
+git clone --depth=1 https://github.com/pwndbg/pwndbg.git -b 2023.07.17
+cd pwndbg
+./setup.sh
 ```
 
 ## Neovim
