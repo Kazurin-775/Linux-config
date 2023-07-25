@@ -4,7 +4,7 @@
 
 ```sh
 # Basic packages
-sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2
+sudo apt install build-essential git zsh wget curl traceroute tmux vim p7zip-full htop aria2 python-is-python3
 
 # CLI utilities
 sudo apt install netcat-openbsd socat strace ltrace
@@ -12,6 +12,9 @@ sudo apt install netcat-openbsd socat strace ltrace
 # Desktop environment
 sudo apt install ibus-rime keepassxc
 # Note: GNOME uses IBus by default
+
+# Linux kernel build dependencies
+sudo apt install flex bison bc lib{ncurses,ssl,elf}-dev
 
 # CTF tools (pwndbg is not supported via apt sources)
 sudo apt install python3-pwntools radare2
