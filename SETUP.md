@@ -20,6 +20,23 @@ sudo apt install flex bison bc lib{ncurses,ssl,elf}-dev
 sudo apt install python3-pwntools radare2
 ```
 
+## Packages (for Arch Linux)
+
+```sh
+# Basic packages
+sudo pacman -S base-devel git zsh wget curl traceroute tmux vim p7zip htop aria2
+
+# CLI utilities
+sudo pacman -S openbsd-netcat socat strace ltrace
+
+# Desktop environment
+sudo pacman -S ibus-rime keepassxc
+# Note: GNOME uses IBus by default
+
+# CTF tools
+sudo pacman -S python-pwntools pwndbg radare2
+```
+
 ## zsh
 
 ```sh
