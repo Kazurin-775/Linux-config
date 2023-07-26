@@ -4,10 +4,10 @@
 
 ```sh
 # Basic packages
-sudo apt install build-essential git zsh wget curl traceroute tmux vim p7zip-full htop aria2 python-is-python3
+sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2 pv silversearcher-ag python-is-python3
 
 # CLI utilities
-sudo apt install netcat-openbsd socat strace ltrace
+sudo apt install netcat-openbsd socat strace ltrace traceroute net-tools ngrep
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
@@ -24,10 +24,10 @@ sudo apt install python3-pwntools radare2
 
 ```sh
 # Basic packages
-sudo pacman -S base-devel git zsh wget curl traceroute tmux vim p7zip htop aria2
+sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher
 
 # CLI utilities
-sudo pacman -S openbsd-netcat socat strace ltrace
+sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep
 
 # Desktop environment
 sudo pacman -S ibus-rime keepassxc
