@@ -43,8 +43,10 @@ sudo pacman -S python-pwntools pwndbg radare2
 # Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Nerd Fonts
-wget 'https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip'
+# Nerd Fonts (for use in desktop environments)
+NF_VER="$(curl -s 'https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')"
+echo "Downloading Nerd Fonts version $NF_VER"
+wget "https://github.com/ryanoasis/nerd-fonts/releases/download/$NF_VER/JetBrainsMono.zip"
 mkdir -p ~/.local/share/fonts
 (cd ~/.local/share/fonts && unzip ~/JetBrainsMono.zip)
 rm JetBrainsMono.zip
