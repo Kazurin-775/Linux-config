@@ -7,7 +7,7 @@
 sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2 pv silversearcher-ag python-is-python3
 
 # CLI utilities
-sudo apt install netcat-openbsd socat strace ltrace traceroute net-tools ngrep
+sudo apt install netcat-openbsd socat strace ltrace traceroute net-tools ngrep lsof nmap
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
@@ -27,7 +27,7 @@ sudo apt install python3-pwntools radare2
 sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher
 
 # CLI utilities
-sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep
+sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep lsof nmap
 
 # Desktop environment
 sudo pacman -S ibus-rime keepassxc
