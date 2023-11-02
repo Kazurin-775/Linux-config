@@ -7,13 +7,16 @@
 	co = checkout
 	di = diff
 	ds = diff --staged
+	puff = pull --ff-only
 	scl = clone --depth=1
 	st = status
 	sm = submodule update --init
 	smu = submodule update --init
-	puff = pull --ff-only
+	sw = switch
 [core]
 	quotepath = false
 	# Windows-specific settings
 	autocrlf = input
 	safecrlf = warn
+[pull]
+	ff = only
