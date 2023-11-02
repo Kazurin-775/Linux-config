@@ -65,7 +65,7 @@ https://typora.io/
 
 ```sh
 # Debian-based OSes
-curl -sSL 'https://typora.io/linux/public-key.asc' | sudo gpg --dearmor -o '/usr/share/keyrings/typora-public-key.gpg'
-echo 'deb [signed-by=/usr/share/keyrings/typora-public-key.gpg] https://typora.io/linux ./' | sudo tee '/etc/apt/sources.list.d/typora.list'
+curl -sSL 'https://typora.io/linux/public-key.asc' | sudo gpg --dearmor -o '/etc/apt/keyrings/typora-public-key.gpg'
+echo 'deb [signed-by=/etc/apt/keyrings/typora-public-key.gpg] https://typora.io/linux ./' | sudo tee '/etc/apt/sources.list.d/typora.list'
 sudo apt update && sudo apt install typora
 ```
