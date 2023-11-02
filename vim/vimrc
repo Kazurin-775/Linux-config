@@ -37,7 +37,7 @@ colorscheme solarized
 " highlight CursorLine cterm=bold
 
 " vim-airline
-if match($TERM, "xterm") > -1 || has("gui_running")
+if match($TERM, "xterm") == 0 || $TERM == "tmux-256color" || has("gui_running")
     let g:airline_powerline_fonts = 1
     let g:airline_theme = 'dark'
     set laststatus=2
