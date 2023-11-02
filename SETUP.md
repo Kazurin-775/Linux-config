@@ -65,7 +65,7 @@ git clone --depth=1 'https://github.com/zsh-users/zsh-autosuggestions.git' "${ZS
 sudo pacman -S rustup
 
 # Manually install rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs | sh
 
 # Configure alternative Cargo registry
 mkdir ~/.cargo
