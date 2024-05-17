@@ -55,8 +55,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 NF_VER="$(curl -s 'https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')"
 echo "Downloading Nerd Fonts version $NF_VER"
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/$NF_VER/JetBrainsMono.zip"
-mkdir -p ~/.local/share/fonts
-(cd ~/.local/share/fonts && unzip ~/JetBrainsMono.zip)
+mkdir -p ~/.local/share/fonts/JetBrainsMono-NF
+(cd ~/.local/share/fonts/JetBrainsMono-NF && unzip ~/JetBrainsMono.zip)
 rm JetBrainsMono.zip
 
 # Powerlevel 10k
