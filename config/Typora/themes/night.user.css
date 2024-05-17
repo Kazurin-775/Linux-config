@@ -1,0 +1,8 @@
+html, body, button, input, select, textarea {
+    font-family: 'Ubuntu', 'Noto Sans CJK SC', sans-serif;
+}
+
+pre, code, kbd, tt, var {
+    font-family: 'Monaspace Argon', 'JetBrains Mono', 'Noto Sans Mono CJK SC', monospace;
+}
+
