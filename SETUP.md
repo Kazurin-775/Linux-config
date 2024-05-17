@@ -7,7 +7,10 @@
 sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria2 pv silversearcher-ag python-is-python3
 
 # CLI utilities
-sudo apt install netcat-openbsd socat strace ltrace traceroute net-tools ngrep lsof nmap
+sudo apt install netcat-openbsd socat strace ltrace traceroute net-tools ngrep lsof nmap tcpdump
+
+# Developer tools
+sudo apt install nasm hexedit ipython3
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
@@ -16,8 +19,8 @@ sudo apt install ibus-rime keepassxc
 # Linux kernel build dependencies
 sudo apt install flex bison bc lib{ncurses,ssl,elf}-dev
 
-# CTF tools (pwndbg is not supported via apt sources)
-sudo apt install python3-pwntools radare2
+# CTF tools (pwndbg and many other tools are not available via apt sources)
+sudo apt install python3-pwntools radare2 binwalk patchelf elfutils
 ```
 
 ## Packages (for Arch Linux)
@@ -27,14 +30,19 @@ sudo apt install python3-pwntools radare2
 sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher
 
 # CLI utilities
-sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep lsof nmap
+sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep lsof nmap tcpdump
+
+# Developer tools
+sudo pacman -S nasm hexedit ipython
 
 # Desktop environment
 sudo pacman -S ibus-rime keepassxc
 # Note: GNOME uses IBus by default
 
 # CTF tools
-sudo pacman -S python-pwntools pwndbg radare2
+sudo pacman -S python-pwntools pwndbg radare2 binwalk patchelf elfutils
+sudo pacman -S heaptrace one_gadget ropper
+yay -S pwninit-bin
 ```
 
 ## zsh
@@ -87,6 +95,13 @@ cargo install cargo-edit
 git clone --depth=1 https://github.com/pwndbg/pwndbg.git -b 2023.07.17
 cd pwndbg
 ./setup.sh
+```
+
+## Install various CTF tools on Ubuntu
+
+```sh
+sudo gem install one_gadget
+cargo install pwninit
 ```
 
 ## Neovim
