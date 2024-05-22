@@ -23,3 +23,19 @@ apt install rust cmake unicorn radare2
 (cd $PREFIX/tmp && ln -s ../include include)
 CARGO_BUILD_TARGET=aarch64-linux-android pip install pwntools
 ```
+
+## SSH access
+
+```sh
+pkg install openssh netcat-openbsd iproute2
+
+# Turn off PasswordAuthentication
+vim $PREFIX/etc/ssh/sshd_config
+
+# Import SSH keys while avoiding to set passwords
+ip addr wlan0
+nc -lvNp 9876 > ssh.pub
+cat ssh.pub
+cat ssh.pub >> .ssh/authorized_keys
+rm ssh.pub
+```
