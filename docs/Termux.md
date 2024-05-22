@@ -5,8 +5,9 @@
 termux-change-repo
 
 # Install oh-my-termux (oh-my-zsh + fonts + color scheme)
+# TODO: oh-my-termux is currently unmaintained, replace it
 pkg install git curl file
-curl -fsSL https://git.io/oh-my-termux | bash
+curl -fsSL https://git.io/oh-my-termux | sed 's,git://,https://,' | bash
 
 # Install oh-my-zsh only
 pkg install git curl zsh file
