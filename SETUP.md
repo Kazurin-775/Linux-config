@@ -64,6 +64,9 @@ git clone --depth=1 'https://github.com/romkatv/powerlevel10k.git' "${ZSH_CUSTOM
 
 # zsh-autosuggestions
 git clone --depth=1 'https://github.com/zsh-users/zsh-autosuggestions.git' "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+# tpm: the tmux plugin manager
+git clone --depth=1 'https://github.com/tmux-plugins/tpm.git' ~/.tmux/plugins/tpm
 ```
 
 ## Rust
