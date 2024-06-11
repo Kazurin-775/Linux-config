@@ -47,6 +47,15 @@ pacman -Syu
 - For addition setup steps, refer to [Setup after install - ArchWSL docs](https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/#setup-after-install)
 - If the first-run script fails to perform its work, don't do a full re-install. Instead, manually perform the remaining work in this file: [ArchWSL-FS/bash\_profile](https://github.com/yuk7/ArchWSL-FS/blob/main/bash_profile)
 
+## Enable systemd support in WSL 2
+
+```sh
+sudo tee /etc/wsl.conf <<EOF
+[boot]
+systemd=true
+EOF
+```
+
 ## Rust
 
 1. Install **Visual Studio Build Tools** or **Visual Studio** ([link](https://visualstudio.microsoft.com/zh-hans/downloads/));
