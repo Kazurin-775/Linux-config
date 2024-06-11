@@ -41,8 +41,8 @@ sudo pacman -S ibus-rime keepassxc
 
 # CTF tools
 sudo pacman -S python-pwntools pwndbg radare2 binwalk patchelf elfutils
-sudo pacman -S heaptrace one_gadget ropper
-yay -S pwninit-bin
+sudo pacman -S one_gadget ropper
+yay -S pwninit-bin heaptrace
 ```
 
 ## zsh
