@@ -95,7 +95,7 @@ cargo install cargo-edit
 ## Install pwndbg on Ubuntu
 
 ```sh
-git clone --depth=1 https://github.com/pwndbg/pwndbg.git -b 2023.07.17
+git clone --depth=1 https://github.com/pwndbg/pwndbg.git -b 2024.02.14
 cd pwndbg
 ./setup.sh
 ```
