@@ -17,8 +17,14 @@ wsl --install --no-distribution
 OptionalFeatures.exe
 # (Enable VM platform + hypervisor platform + WSL)
 
+# If on Windows 11, grab the latest WSL features!
+wsl --update
+
 # Set WSL 2 as default (just in case)
 wsl --set-default-version 2
+
+# Import .wslconfig
+cp Linux-config\wslconfig ~\.wslconfig
 ```
 
 Then, **reboot the system once** before installing any Linux distribution.
@@ -33,9 +39,9 @@ Fix outdated Arch Linux keyring:
 
 ```sh
 nano /etc/pacman.d/mirrorlist
-pacman -Sy archlinux-keyring
+pacman-key --init
+pacman-key --populate
 pacman -Syu
-# pacman-key --populate
 ```
 
 - For addition setup steps, refer to [Setup after install - ArchWSL docs](https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/#setup-after-install)
