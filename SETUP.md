@@ -147,7 +147,13 @@ systemctl --user enable --now ssh-agent
 ```sh
 cp Linux-config/zshrc .zshrc
 cp Linux-config/zprofile .zprofile
+
 cp Linux-config/gitconfig .gitconfig
+
 cp -a Linux-config/vim .vim
+
+cp Linux-config/tmux.conf .tmux.conf
+cp -a Linux-config/config/tmux-powerline .config/
+
 sudo cp -R Linux-config/sudoers.d /etc/
 ```
