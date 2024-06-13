@@ -156,4 +156,5 @@ cp Linux-config/tmux.conf .tmux.conf
 cp -a Linux-config/config/tmux-powerline .config/
 
 sudo cp -R Linux-config/sudoers.d /etc/
+sudo cp -R Linux-config/systemd /etc/
 ```
