@@ -27,7 +27,7 @@ sudo apt install python3-pwntools radare2 binwalk patchelf elfutils
 
 ```sh
 # Basic packages
-sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher
+sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher man-db man-pages
 
 # CLI utilities
 sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep lsof nmap tcpdump
