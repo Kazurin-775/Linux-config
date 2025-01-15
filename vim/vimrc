@@ -13,7 +13,8 @@ set cursorline
 
 " gVim configuration
 if has("gui_running")
-    set guifont="Sarasa Mono SC 14"
+    set guifont=Sarasa_Mono_Slab_SC:h12
+    set columns=120 lines=30
 endif
 
 " Plugins
