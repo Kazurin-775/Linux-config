@@ -10,7 +10,7 @@ sudo apt install build-essential git zsh wget curl tmux vim p7zip-full htop aria
 sudo apt install netcat-openbsd socat strace ltrace traceroute net-tools ngrep lsof nmap tcpdump
 
 # Developer tools
-sudo apt install nasm hexedit ipython3
+sudo apt install nasm hexedit ipython3 git-absorb
 
 # Desktop environment
 sudo apt install ibus-rime keepassxc
@@ -27,13 +27,13 @@ sudo apt install python3-pwntools radare2 binwalk patchelf elfutils
 
 ```sh
 # Basic packages
-sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher man-db man-pages
+sudo pacman -S base-devel git zsh wget curl tmux vim p7zip htop aria2 pv the_silver_searcher man-db man-pages cpio
 
 # CLI utilities
 sudo pacman -S openbsd-netcat socat strace ltrace traceroute net-tools ngrep lsof nmap tcpdump
 
 # Developer tools
-sudo pacman -S nasm hexedit ipython
+sudo pacman -S nasm hexedit ipython python-virtualenv git-absorb
 
 # Desktop environment
 sudo pacman -S ibus-rime keepassxc
