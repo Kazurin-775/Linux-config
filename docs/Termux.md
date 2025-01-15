@@ -13,6 +13,11 @@ curl -fsSL https://git.io/oh-my-termux | sed 's,git://,https://,' | bash
 pkg install git curl zsh file
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
+# Install color scheme and font
+mkdir -p .termux
+curl -fsLo .termux/colors.properties 'https://raw.githubusercontent.com/adi1090x/termux-style/refs/heads/master/colors/base16-google-dark.properties'
+curl -fLo .termux/font.ttf 'https://raw.githubusercontent.com/adi1090x/termux-style/refs/heads/master/fonts/Fira.ttf'
+
 # For other packages, please refer to SETUP.md
 ```
 
