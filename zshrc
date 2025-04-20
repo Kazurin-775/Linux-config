@@ -118,8 +118,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # WSL 2 specific configurations.
 if [ -n "$WSL_DISTRO_NAME" ]; then
-    WSL_HOST_IP='172.28.144.1'
-    export http_proxy="http://$WSL_HOST_IP:7890" https_proxy="http://$WSL_HOST_IP:7890"
+    WSL_HOST_IP="$(ip route show default | cut -d' ' -f3)"
+    export http_proxy="http://$WSL_HOST_IP:7897" https_proxy="http://$WSL_HOST_IP:7897"
 fi
 
 # Set $SSH_AUTH_SOCK when ssh-agent is launched by `systemd --user`.
