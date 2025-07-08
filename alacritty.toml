@@ -1,0 +1,51 @@
+[window]
+dimensions = { columns = 120, lines = 30 }
+padding = { x = 8, y = 8 }
+position = { x = 760, y = 400 }
+option_as_alt = "OnlyLeft"
+
+[font]
+normal = { family = "MesloLGM Nerd Font" }
+size = 16
+
+[cursor]
+style = { blinking = "On" }
+blink_timeout = 60
+
+[scrolling]
+history = 20000
+
+[keyboard]
+bindings = [
+    { mods = "Control", key = "Tab", action = "SelectNextTab" },
+    { mods = "Control|Shift", key = "Tab", action = "SelectPreviousTab" },
+]
+
+# Colors (Dracula)
+
+# Default colors
+[colors.primary]
+background = '#282a36'
+foreground = '#f8f8f2'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#bd93f9'
+magenta = '#ff79c6'
+cyan    = '#8be9fd'
+white   = '#bbbbbb'
+
+# Bright colors
+[colors.bright]
+black   = '#555555'
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#caa9fa'
+magenta = '#ff79c6'
+cyan    = '#8be9fd'
+white   = '#ffffff'
