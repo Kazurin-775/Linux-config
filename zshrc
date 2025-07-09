@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [[ "$TERM" == xterm* || "$TERM" == 'tmux-256color' ]]; then
+if [[ "$TERM" == xterm* || "$TERM" == 'tmux-256color' || "$TERM" == 'alacritty' ]]; then
     ZSH_THEME="powerlevel10k/powerlevel10k"
 else
     ZSH_THEME="ys"
