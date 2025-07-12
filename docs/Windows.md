@@ -25,6 +25,11 @@ wsl --set-default-version 2
 
 # Import .wslconfig
 cp Linux-config\wslconfig ~\.wslconfig
+
+# In Windows Firewall, allow all inbound connections from WSL
+# FIXME: this firewall rule loses effect after every reboot
+# https://github.com/microsoft/WSL/issues/4585#issuecomment-610061194
+New-NetFirewallRule -DisplayName 'WSL' -Direction Inbound -InterfaceAlias 'vEthernet (WSL (Hyper-V firewall))' -Action Allow
 ```
 
 Then, **reboot the system once** before installing any Linux distribution.
@@ -47,16 +52,28 @@ pacman -Syu
 - For addition setup steps, refer to [Setup after install - ArchWSL docs](https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/#setup-after-install)
 - If the first-run script fails to perform its work, don't do a full re-install. Instead, manually perform the remaining work in this file: [ArchWSL-FS/bash\_profile](https://github.com/yuk7/ArchWSL-FS/blob/main/bash_profile)
 
+Cleanup (for mysophobia):
+
+```sh
+sudo pacman -Rsn arch-install-scripts
+sudo pacman -D --asdeps sudo
+```
+
 ## Enable systemd support in WSL 2
 
 ```sh
 sudo tee /etc/wsl.conf <<EOF
 [boot]
-systemd=true
+systemd = true
+
+# Don't run Windows programs
+[interop]
+enabled = false
+appendWindowsPath = false
 EOF
 ```
 
-## Rust
+## Rust on Windows
 
 1. Install **Visual Studio Build Tools** or **Visual Studio** ([link](https://visualstudio.microsoft.com/zh-hans/downloads/));
 2. Go to https://rustup.rs/ and download `rustup-init.exe`;
