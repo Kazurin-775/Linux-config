@@ -76,6 +76,52 @@ sudo pacman -Rsn arch-install-scripts
 sudo pacman -D --asdeps sudo
 ```
 
+## Arch Linux on WSL (using the official image; not recommended)
+
+Refer to [Install Arch Linux on WSL](https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL) for the full installation guide.
+
+```sh
+wsl --install archlinux
+wsl --update
+```
+
+Installation requires a fully working connection to GitHub Releases and to geo.mirror.pkgbuild.com.
+
+---
+
+Configuration of the newly installed system is similar to that of any other Arch Linux installation (but involves special treatment due to quirks in the image):
+
+```sh
+# Add pacman mirror
+sed -i '1s,^,Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch\n\n,' /etc/pacman.d/mirrorlist
+
+# Restore default pacman configuration
+sed -i -e '/NoProgressBar/s,^,#,' -e '/#Color/s,^#,,' -e '/#CheckSpace/s,^#,,' -e '/VerbosePkgLists/s,^,#,' /etc/pacman.conf
+
+# Full system upgrade
+pacman -Syu
+
+# Install core packages
+pacman -S base-devel nano sudo
+
+# Configure locales
+sed -i '/en_US.UTF-8/s,^#,,' /etc/locale.gen
+locale-gen
+echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+
+# Add a new user
+useradd -G wheel -m USERNAME
+passwd USERNAME
+sed -i '/wheel ALL=(ALL:ALL) ALL/s,^# ,,' /etc/sudoers
+
+# In Windows:
+wsl --manage archlinux --set-default-user USERNAME
+```
+
+⚠️ Note that the built-in `/etc/pacman.d/mirrorlist` is completely different from what is in the Arch Linux ISO image. Moreover, you may come across a lot of other quirks that seem to target cloud environments during your daily use. **I still recommend using ArchWSL over this one, as the former offers a more complete and well-configured environment suitable for a daily driver.**
+
+For pacman configurations, refer to this thread: https://bbs.archlinux.org/viewtopic.php?id=287962
+
 ## Enable systemd support in WSL 2
 
 ```sh
