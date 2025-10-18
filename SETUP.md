@@ -66,7 +66,8 @@ git clone --depth=1 'https://github.com/romkatv/powerlevel10k.git' "${ZSH_CUSTOM
 git clone --depth=1 'https://github.com/zsh-users/zsh-autosuggestions.git' "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
 # tpm: the tmux plugin manager
-git clone --depth=1 'https://github.com/tmux-plugins/tpm.git' ~/.tmux/plugins/tpm
+git clone --depth=1 'https://github.com/tmux-plugins/tpm.git' ~/.config/tmux/plugins/tpm
+# Press <Ctrl-b I> to install plugins; tmux may freeze for a while before the installation completes.
 ```
 
 ## Rust
@@ -152,7 +153,7 @@ cp Linux-config/gitconfig .gitconfig
 
 cp -a Linux-config/vim .vim
 
-cp Linux-config/tmux.conf .tmux.conf
+cp -a Linux-config/config/tmux .config/
 cp -a Linux-config/config/tmux-powerline .config/
 
 sudo cp -R Linux-config/sudoers.d /etc/
