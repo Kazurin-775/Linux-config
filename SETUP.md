@@ -45,6 +45,17 @@ sudo pacman -S one_gadget ropper
 yay -S pwninit-bin heaptrace
 ```
 
+### Packages (for RHEL variants)
+
+```sh
+# Enable EPEL if needed
+sudo dnf config-manager --enable ol9_developer_EPEL
+
+# Basic packages
+sudo dnf groupinstall 'Development Tools'
+sudo dnf install git zsh wget curl tmux vim p7zip htop aria2 pv ag man-db man-pages cpio
+```
+
 ## zsh
 
 ```sh
