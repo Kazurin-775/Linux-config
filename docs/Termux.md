@@ -31,6 +31,31 @@ pkg install git curl file
 curl -fsSL https://git.io/oh-my-termux | sed 's,git://,https://,' | bash
 ```
 
+## Cleanup unnecessary explicit installs
+
+In a default install there are way too many packages marked as manually installed. Clean them up by running:
+
+```sh
+# Backup
+apt-mark showmanual > ~/apt-manual.txt
+
+# Caution: this line may incorrectly operate on false positives on non-brand-new installs. Check before you run.
+apt-mark showmanual | grep lib | xargs apt-mark auto
+
+apt-mark auto apt bzip2 curl dpkg gzip tar unzip xxhash xz-utils zstd
+
+apt-mark auto ca-certificates command-not-found dialog gpgv ncurses openssl patch pcre2 readline resolv-conf
+
+apt-mark auto bash coreutils dash diffutils dos2unix ed findutils gawk grep less procps psmisc sed util-linux
+
+apt-mark auto termux-am termux-am-socket termux-exec termux-keyring termux-licenses termux-tools
+
+# Check if everything is correctly set
+apt autoremove --purge
+```
+
+Only these packages are strictly needed to be set as manually installed: `debianutils nano termux-core wget`.
+
 ## CTF tools
 
 ```sh
