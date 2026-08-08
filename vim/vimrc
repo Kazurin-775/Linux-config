@@ -27,6 +27,9 @@ call plug#begin('~/.vim/plugged')
     " vim-airline
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+
+    " vim-auto-mkdir
+    Plug 'travisjeffery/vim-auto-mkdir'
 call plug#end()
 
 " Syntax and color scheme
