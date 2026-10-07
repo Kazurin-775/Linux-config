@@ -81,7 +81,11 @@ git clone --depth=1 'https://github.com/romkatv/powerlevel10k.git' "${ZSH_CUSTOM
 
 # zsh-autosuggestions
 git clone --depth=1 'https://github.com/zsh-users/zsh-autosuggestions.git' "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+```
 
+## tmux
+
+```sh
 # tpm: the tmux plugin manager
 git clone --depth=1 'https://github.com/tmux-plugins/tpm.git' ~/.config/tmux/plugins/tpm
 # Press <Ctrl-b I> to install plugins; tmux may freeze for a while before the installation completes.
@@ -103,11 +107,18 @@ cat > ~/.cargo/config.toml <<EOF
 replace-with = 'mirror'
 
 [source.mirror]
-registry = 'sparse+https://mirrors6.tuna.tsinghua.edu.cn/crates.io-index/'
+registry = 'sparse+https://mirrors.ustc.edu.cn/crates.io-index/'
 EOF
 
 # Install helper tools
 cargo install cargo-edit
+```
+
+## Node.js
+
+```sh
+# Use nvm to manage Node.js distributions
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
 ```
 
 ## Install pwndbg on Ubuntu
