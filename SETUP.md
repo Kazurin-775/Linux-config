@@ -62,13 +62,19 @@ sudo dnf install git zsh wget curl tmux vim p7zip htop aria2 pv ag man-db man-pa
 # Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Nerd Fonts (for use in desktop environments)
+# Maple Mono Nerd Fonts (for use in desktop environments)
+NF_VER="$(curl -s 'https://api.github.com/repos/subframe7536/maple-font/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')"
+echo "Downloading Nerd Fonts version $NF_VER"
+wget -O /tmp/maple-mono.zip "https://github.com/subframe7536/maple-font/releases/download/$NF_VER/MapleMonoNL-NF-unhinted.zip"
+mkdir -p ~/.local/share/fonts/MapleMono-NL-NF
+(cd ~/.local/share/fonts/MapleMono-NL-NF && unzip /tmp/maple-mono.zip && rm /tmp/maple-mono.zip)
+
+# JetBrains Mono Nerd Fonts (for use in desktop environments)
 NF_VER="$(curl -s 'https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')"
 echo "Downloading Nerd Fonts version $NF_VER"
-wget "https://github.com/ryanoasis/nerd-fonts/releases/download/$NF_VER/JetBrainsMono.zip"
+wget -O /tmp/jetbrains-mono.zip "https://github.com/ryanoasis/nerd-fonts/releases/download/$NF_VER/JetBrainsMono.zip"
 mkdir -p ~/.local/share/fonts/JetBrainsMono-NF
-(cd ~/.local/share/fonts/JetBrainsMono-NF && unzip ~/JetBrainsMono.zip)
-rm JetBrainsMono.zip
+(cd ~/.local/share/fonts/JetBrainsMono-NF && unzip /tmp/jetbrains-mono.zip && rm /tmp/jetbrains-mono.zip)
 
 # Powerlevel 10k
 git clone --depth=1 'https://github.com/romkatv/powerlevel10k.git' "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
